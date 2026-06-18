@@ -1,0 +1,19 @@
+table Table
+	lineageTag: cd2924a3-dd77-41a3-adfc-598bda0cf7d1
+
+	column Column1
+		dataType: string
+		lineageTag: 1f0aae61-6072-481f-8c9a-88555da36253
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				  Source
+

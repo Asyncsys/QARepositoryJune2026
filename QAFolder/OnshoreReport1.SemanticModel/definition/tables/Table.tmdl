@@ -1,0 +1,172 @@
+table Table
+	lineageTag: a10e7e0a-50b0-456f-be06-e597e94c57ef
+
+	column Segment
+		dataType: string
+		lineageTag: 59961427-2958-4cf5-b17f-4dc52c38aadc
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 006ad0e0-1294-4a17-a877-003ce43c5244
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Product '
+		dataType: string
+		lineageTag: c383cc7b-e7e4-42ba-b05e-d24e7ec94468
+		summarizeBy: none
+		sourceColumn: " Product "
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Discount Band '
+		dataType: string
+		lineageTag: f1a3dc16-b497-4221-be7e-c1e061328dce
+		summarizeBy: none
+		sourceColumn: " Discount Band "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Units Sold'
+		dataType: double
+		lineageTag: 4e2e8db5-fc81-420d-8da5-73d8bac97ad6
+		summarizeBy: sum
+		sourceColumn: Units Sold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ' Manufacturing Price '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: fea14557-72aa-487b-a852-c59f5e940bc9
+		summarizeBy: sum
+		sourceColumn: " Manufacturing Price "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ' Sale Price '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: eec1dd55-6d41-4ef4-8e25-d6587ec27df0
+		summarizeBy: sum
+		sourceColumn: " Sale Price "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ' Gross Sales '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8aa705f7-f33f-4f00-8b96-6ad76b3c4b65
+		summarizeBy: sum
+		sourceColumn: " Gross Sales "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ' Discounts '
+		dataType: string
+		lineageTag: 79e9cdd2-6b7b-454a-9d42-0a2b8bbcf749
+		summarizeBy: none
+		sourceColumn: " Discounts "
+
+		annotation SummarizationSetBy = Automatic
+
+	column '  Sales '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b97000e7-1031-4502-9a4c-c7f4d4315b3c
+		summarizeBy: sum
+		sourceColumn: "  Sales "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ' COGS '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8ede0f0a-c53b-4bb8-8881-8ee2ed8557ea
+		summarizeBy: sum
+		sourceColumn: " COGS "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ' Profit '
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2d774656-77e3-463c-bb7d-5176f2f00adc
+		summarizeBy: sum
+		sourceColumn: " Profit "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ab81a0a4-cff8-451a-94bd-79e7338f157f
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 835ddaf4-a016-403e-9685-67a14006cdab
+			defaultHierarchy: LocalDateTable_34918f0f-5d39-4549-954d-82fdec8bb299.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 035f5574-b4b7-4d3e-a9e5-49491d19eff2
+		summarizeBy: sum
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Month Name '
+		dataType: string
+		lineageTag: 0a108ec8-0d2a-4445-9485-f801cff04326
+		summarizeBy: none
+		sourceColumn: " Month Name "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: fd5baafa-c2f6-496b-8d62-8b413930ecde
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("xZhNj9s2EIb/irDgkdlw+M1juvkAAmwbYNFTkIPiZRujazmQ5aD59yXtlTg0KVveouiNHALS4+E774z8+fPNh+0P33cb3w039Oau7drHNiyau7bv/eD7tom7X7edjwvQYG9VWBBxy1iMEM7GleBUmHHXkFdNU4YJaApWVXfwGl5zBjIu4xM+tt2+7X/Go0P4Cz2h/eD7Tdv9PIMrOMzAck0lL2GzMAFBOdR3S2Dv14+btv/LR9b3fdut/DwqB2MzVFAor7qe1xQmHKixCZVR68adTqj6gLp/fmWN82JOrZ3jDPkRlZRmYWKpTZiSSvkiynv/93q1PZNNadhcNg1lqpJNHCZcUsNSNoOC1WLOKyWqQGSk6U1EcUdVhTWPE+FChtHdi1BUkzCAI6Hy+Ji3fuU3X32/RAL3224IlpARu2NNqaoA7LTLBJDCxOGSklSz8UQkUHF4d9uvvmWQd9/arvNPzae2Hzrf7zLDqqFyBTZn5VPSWODQpQxwmJiQZjlpItSb5i9SQSr+GiVY5zJKZKmGOlsVq0MXbqlz9d1FzEpKL1w/KKlmchperWTFAHA4XrnAinGTAF7oANWLf67/ikj/8/p/14Ui/96vd/6yPrVWt6fZTKRChO5obtUpahYnAhy1GncpwcdDk2DNEfYpb1EPm/bpqfllv1t3fre7mFen8noSKUncGipZmdg8TrgI3pW2Mih52tlEG1/TvNn/ud8Ni8y1ml2QOqM1SQ2UcV4KFYdjDzUCyZa78cglzli4zYP/PpSWeoUORFFS01KGu+alp2ZhIgGnOEwC0xGwI6s4rOMjflsN24QqisL6vVsP/rF5GNrB75rtH82bje/Xq1l2DSfs2Okr5DhKQqdCfYwyM3Eva1szw+undue3uRYcP95p6bGK2opp4Sjh1PHqBlEeIN/7r/3ZMTCVV8nojMwZUWcNrgkVZ8XhkFmDbdaaqyjPNtdKQp9bK6L9f3orMoGSEhjTOSUar4TiFCqOlcfDJwFQlfzVMdTN/mV/LYGFNnNZDcMykwUsjobKBwapnAQbp8qLfSBL6TmRWitywMlU46ccFHw4GmGRpqnRoxoWOH/9Y6oEVNLNVZGlXJSGhKOh7KVDlW7keOKSj1Y9X1xqpyWpsScVhLtpGOKr3TSLE3BhbEnb0FvT4TLipeYUJio+l9c4O9Wn1BQ+jFToyzqMVPqE9EI/zSR6rktVbADknGptyF+pWhwNmjDpt3LK7ajasbkemlSluV7ZoyC07Vmz0kxQU5lb8ziR0uLxCpSifDoFQMMAHF/9o5RExbOuS7eDU6ngocrJ0sWycKw7odMFcWav+wFY02d7GKh5TceLrv7pwpGmQ2dAmg4D46TpcYA5oNYGGHGlOCycdAb0laipqIwwWTh+hYGp75YMW1/+AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Segment = _t, Country = _t, #" Product " = _t, #" Discount Band " = _t, #"Units Sold" = _t, #" Manufacturing Price " = _t, #" Sale Price " = _t, #" Gross Sales " = _t, #" Discounts " = _t, #"  Sales " = _t, #" COGS " = _t, #" Profit " = _t, Date = _t, #"Month Number" = _t, #" Month Name " = _t, Year = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Segment", type text}, {"Country", type text}, {" Product ", type text}, {" Discount Band ", type text}, {"Units Sold", type number}, {" Manufacturing Price ", Currency.Type}, {" Sale Price ", Currency.Type}, {" Gross Sales ", Currency.Type}, {" Discounts ", type text}, {"  Sales ", Currency.Type}, {" COGS ", Currency.Type}, {" Profit ", Currency.Type}, {"Date", type date}, {"Month Number", Int64.Type}, {" Month Name ", type text}, {"Year", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

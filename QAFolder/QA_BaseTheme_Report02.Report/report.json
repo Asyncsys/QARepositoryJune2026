@@ -1,0 +1,42 @@
+{
+  "config": "{\n  \"version\" : \"5.37\",\n  \"themeCollection\" : {\n    \"baseTheme\" : {\n      \"name\" : \"CY22SU09\",\n      \"version\" : \"5.39\",\n      \"type\" : 2\n    }\n  },\n  \"activeSectionIndex\" : 0,\n  \"defaultDrillFilterOtherVisuals\" : true,\n  \"linguisticSchemaSyncVersion\" : 0,\n  \"settings\" : {\n    \"useNewFilterPaneExperience\" : true,\n    \"allowChangeFilterTypes\" : true,\n    \"useStylableVisualContainerHeader\" : true,\n    \"useEnhancedTooltips\" : true,\n    \"exportDataMode\" : 1,\n    \"useDefaultAggregateDisplayName\" : true\n  },\n  \"objects\" : {\n    \"section\" : [ {\n      \"properties\" : {\n        \"verticalAlignment\" : {\n          \"expr\" : {\n            \"Literal\" : {\n              \"Value\" : \"'Top'\"\n            }\n          }\n        }\n      }\n    } ]\n  },\n  \"creationSource\" : \"QuickCreate\"\n}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY22SU09",
+            "path": "BaseThemes/CY22SU09.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"d275b8187045434c8309\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"cityData.City\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(cityData.Population)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"cityData\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"City\"},\"Name\":\"cityData.City\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Population\"}},\"Function\":0},\"Name\":\"Sum(cityData.Population)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Population\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

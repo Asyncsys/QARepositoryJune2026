@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "OnshoreReport1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7181fefe-37a2-aa6c-4a2f-ec4c63633af9"
+  }
+}

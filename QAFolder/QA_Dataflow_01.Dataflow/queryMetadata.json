@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "QA_Dataflow_01",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "87baba93-fd45-4e19-8421-55cf7c607088",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Livestock and Meat Dataflow": {
+      "queryId": "b43cde9c-3a02-448a-9b18-272c8ae95f70",
+      "queryName": "Livestock and Meat Dataflow"
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"b6e71003-dc09-47ca-8c93-3ea1d8883632\",\"DatasourceId\":\"cad8d453-7f45-4dd0-8699-65686e226944\"}"
+    },
+    {
+      "path": "PowerPlatformDataflows",
+      "kind": "PowerPlatformDataflows",
+      "connectionId": "{\"ClusterId\":\"b6e71003-dc09-47ca-8c93-3ea1d8883632\",\"DatasourceId\":\"5b70320b-160d-4e34-bd84-6329f361d3e2\"}"
+    }
+  ]
+}

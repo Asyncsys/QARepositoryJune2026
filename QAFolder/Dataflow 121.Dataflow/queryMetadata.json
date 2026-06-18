@@ -1,0 +1,22 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow 121",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Re-name Livestock and Meat Dataflow": {
+      "queryId": "6e74e65c-4523-423c-8976-88f9eef382a0",
+      "queryName": "Re-name Livestock and Meat Dataflow"
+    }
+  },
+  "connections": [
+    {
+      "path": "PowerPlatformDataflows",
+      "kind": "PowerPlatformDataflows",
+      "connectionId": "{\"ClusterId\":\"b6e71003-dc09-47ca-8c93-3ea1d8883632\",\"DatasourceId\":\"7e884ccb-3c5b-4d2c-9e76-59fabd4c1692\"}"
+    }
+  ]
+}

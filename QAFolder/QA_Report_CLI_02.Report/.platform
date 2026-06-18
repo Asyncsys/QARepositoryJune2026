@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "QA_Report_CLI_02"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b6f9531-7fd2-a9ac-45fb-4c5c9ce52746"
+  }
+}

@@ -1,0 +1,27 @@
+table QA_Semantic_CLI
+	lineageTag: 762461b6-f0c7-463a-85cb-bfa25f42d919
+
+	column Column1
+		dataType: string
+		lineageTag: fd3043c0-dc2a-42c4-87ef-b8c31751049d
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column tyty
+		dataType: string
+		lineageTag: 78318ce2-6682-4884-a0dc-f083f35b752d
+		summarizeBy: none
+		sourceColumn: tyty
+
+		annotation SummarizationSetBy = Automatic
+
+	partition QA_Semantic_CLI = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WSi1KVdJRKqksqVSK1YmGMGD8WAA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t, tyty = _t])
+				in
+				  Source
+

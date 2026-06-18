@@ -1,0 +1,21 @@
+table QA_Table_02
+	lineageTag: 35e697b6-10b5-40d7-a936-6c1947af1347
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: e07a3f16-2ddc-460b-b346-8b7e442bbe78
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition QA_Table_02 = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMjUzNVOK1YlWMjM3M1eKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				  #"Changed column type" = Table.TransformColumnTypes(Source, {{"Column1", Int64.Type}})
+				in
+				  #"Changed column type"
+

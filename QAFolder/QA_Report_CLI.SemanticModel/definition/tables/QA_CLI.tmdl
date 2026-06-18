@@ -1,0 +1,19 @@
+table QA_CLI
+	lineageTag: 03a96dac-e551-4544-92d1-66ca061bb6ce
+
+	column Column1
+		dataType: string
+		lineageTag: dd811379-554a-4455-87d5-57a518c37ba9
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition QA_CLI = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKleK1QGSqUqxsQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				  Source
+

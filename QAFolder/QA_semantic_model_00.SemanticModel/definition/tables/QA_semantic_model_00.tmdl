@@ -1,0 +1,21 @@
+table QA_semantic_model_00
+	lineageTag: 98bfc090-f851-434a-ac41-fa6bbbf90a74
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: f59c7e73-1dc4-4ff3-8c90-f2a645fbd9e4
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition QA_semantic_model_00 = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMjQyVoqNBQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				  #"Changed column type" = Table.TransformColumnTypes(Source, {{"Column1", Int64.Type}})
+				in
+				  #"Changed column type"
+

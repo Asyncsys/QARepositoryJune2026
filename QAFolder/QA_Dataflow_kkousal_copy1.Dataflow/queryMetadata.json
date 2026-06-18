@@ -1,0 +1,23 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowFastCopy": false
+  },
+  "name": "QA_Dataflow_kkousal",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "meta": {
+      "queryId": "e5c4f8be-4bb7-4c0f-a59e-3130927c5b9d",
+      "queryName": "meta"
+    }
+  },
+  "connections": [
+    {
+      "path": "https://docs.google.com/spreadsheets/d/1GGuAhz24khVdbwaqzNqerYtNptKFUoXRPOxIpTWgQPg/edit?gid=1544873660#gid=1544873660",
+      "kind": "GoogleSheets",
+      "connectionId": "{\"ClusterId\":\"b6e71003-dc09-47ca-8c93-3ea1d8883632\",\"DatasourceId\":\"81d2707c-5030-43dd-9535-6fdffcf25bab\"}"
+    }
+  ],
+  "allowNativeQueries": false
+}

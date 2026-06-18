@@ -1,0 +1,33 @@
+table cityData
+	lineageTag: ed446f3b-1aa1-4da2-b3ae-38c057d6cc2d
+
+	column City
+		dataType: string
+		lineageTag: 379b5e3f-97c4-4b24-bf2d-f21844b16b98
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Population
+		dataType: int64
+		formatString: 0
+		lineageTag: c1bac88a-ea5e-4498-8c1b-5200fda86f06
+		summarizeBy: sum
+		sourceColumn: Population
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cityData-5bbba57c-5306-4fe9-884e-24f975530893 = m
+		mode: import
+		source = ```
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcivKLE7OV9JRMjc2MDBQitWJVnLMyUnNA4oYG8FEAnIS80BqTM3AIrEA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [City = _t, Population = _t]),
+				  #"Changed column type" = Table.TransformColumnTypes(Source, {{"City", type text}, {"Population", Int64.Type}})
+				in
+				  #"Changed column type"
+				
+				```
+
+	annotation PBI_ResultType = Table
+
